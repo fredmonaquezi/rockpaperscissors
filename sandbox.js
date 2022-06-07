@@ -26,26 +26,43 @@ function playRound(playerSelection, computerSelection){
     } else if(
         (computerSelection == 'rock' && playerSelection == 'scissors') ||
         (computerSelection == 'paper' && playerSelection == 'rock') ||(computerSelection == 'scissors' && playerSelection == 'paper')) {
-            computerScore++
-            if(computerScore >= 3){
-                return 'The computer wins the game';
-            } else
-           return 'The computer scores a point';
+            computerScore;
+            return 'The computer scores a point'
+        //     computerScore++
+        //     if(computerScore >= 3){
+        //         return 'The computer wins the game';
+        //     } else
+        //    return 'The computer scores a point';
         } else if (
             (playerSelection == 'rock' && computerSelection == 'scissors') ||
             (playerSelection == 'paper'&& computerSelection == 'rock')||
             (playerSelection == 'scissors' && computerSelection == 'paper')){
-                playerScore++
-                if(playerScore >= 3){
-                    return 'You win the game'
-                } else
-                return 'You win the game!';
+                playerScore;
+                return 'The player scores a point'
             }
+            //     playerScore++
+            //     if(playerScore >= 3){
+            //         return 'You win the game'
+            //     } else
+            //     return 'You win the game!';
+            // }
 
 }
 
-function game(){
+function game(playerSelection){
     for(let i = 0; i < 5; i++);
+    let roundResult = playRound(playerSelection, computerSelection);
+    if(roundResult == computerScore){
+        computerScore++
+    } else if(roundResult == playerScore){
+        playerScore++
+    }
+        console.log(game());
+        return;
+
+    // if(playerScore < 3 || computerScore < 3){
+    //     playerSelection = prompt('Choose one')
+    // }
 
 }
 
