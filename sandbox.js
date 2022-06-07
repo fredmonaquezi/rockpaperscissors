@@ -3,11 +3,33 @@
 //3 - declare a winner, loser or draw
 //4 - make the function case senstive so no mistakes happen
 
-let playerSelection = prompt('Choose one', '');
+let playerSelection = '';
 let playerScore = 0;
 let computerScore = 0;
 
 const myArray = ['rock', 'paper', 'scissors'];
+
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
+rockButton.addEventListener('click', () => {
+    playerSelection = 'rock';
+    playRound(playerSelection, computerPlay());
+    console.log(playRound(playerSelection, computerSelection));
+});
+
+paperButton.addEventListener('click', () => {
+    playerSelection = 'paper';
+    playRound(playerSelection, computerPlay());
+    console.log(playRound(playerSelection, computerSelection));
+});
+
+scissorsButton.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    playRound(playerSelection, computerPlay());
+    console.log(playRound(playerSelection, computerSelection));
+});
 
 function computerPlay(computerSelection){
     computerSelection = myArray[Math.floor(Math.random() * myArray.length)]
@@ -20,7 +42,7 @@ let computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection){
     // computerSelection = computerPlay().toLowerCase();
-    playerSelection = playerSelection.toLowerCase();
+    // playerSelection = playerSelection.toLowerCase();
     if(playerSelection == computerSelection){
         return 'Tie!'
     } else if(
@@ -51,6 +73,6 @@ function game(){
 
 console.log(playerScore);
 console.log(computerScore);
-console.log(playerSelection);
+// console.log(playerSelection);
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
